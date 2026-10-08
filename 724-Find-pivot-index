@@ -1,0 +1,22 @@
+
+        class Solution {
+    public int pivotIndex(int[] nums) {
+        int i;
+        int total=0;
+        int leftsum =0;
+        int rightsum;
+        for(i=0;i<nums.length;i++)
+        total=total+nums[i];
+        for( i=0;i<nums.length;i++){
+            rightsum=total-leftsum-nums[i];
+         
+            if(leftsum==rightsum)
+            return i;
+              leftsum=leftsum+nums[i];
+           
+        }
+        return -1;
+
+    } 
+  
+}
